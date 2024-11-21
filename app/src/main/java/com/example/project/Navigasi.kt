@@ -49,7 +49,7 @@ fun Navigasi(
             composable(route = Halaman.Data.name) {
                 DetailMahasiswaView(
                     dataMhs = uiState,
-                    onBackButtonClicked = {
+                    onClickButton = {
                         navHost.popBackStack()
                     }
                 )
