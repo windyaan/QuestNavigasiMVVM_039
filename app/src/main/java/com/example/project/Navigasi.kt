@@ -26,6 +26,7 @@ fun Navigasi(
         NavHost(
             modifier = modifier.padding(ispadding),
             navController = navHost,
+            startDestination = Halaman.Form.name
         ){}
     }
 }
