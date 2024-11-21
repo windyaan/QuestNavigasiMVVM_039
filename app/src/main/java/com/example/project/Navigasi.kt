@@ -25,6 +25,7 @@ fun Navigasi(
         val uiState by viewModel.uiState.collectAsState()
         NavHost(
             modifier = modifier.padding(ispadding),
+            navController = navHost,
         ){}
     }
 }
