@@ -28,7 +28,7 @@ fun Navigasi(
     navHost: NavHostController = rememberNavController()
 ) {
     Scaffold { ispadding ->
-        val uiState by viewModel.dataModel.collectAsState()
+        val dataModel by viewModel.dataModel.collectAsState()
         NavHost(
             modifier = modifier.padding(ispadding),
             navController = navHost,
@@ -48,10 +48,7 @@ fun Navigasi(
             }
             composable(route = Halaman.Data.name) {
                 DetailMahasiswaView(
-                    dataMhs = uiState,
-                    onClickButton = {
-                        navHost.popBackStack()
-                    }
+                    dataMhs = dataModel
                 )
             }
         }
