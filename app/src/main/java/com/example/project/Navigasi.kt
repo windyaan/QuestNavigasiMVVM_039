@@ -1,5 +1,6 @@
 package com.example.project
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,7 +24,7 @@ fun Navigasi(
     Scaffold { ispadding ->
         val uiState by viewModel.uiState.collectAsState()
         NavHost(
-
-        )
+            modifier = modifier.padding(ispadding),
+        ){}
     }
 }
