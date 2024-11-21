@@ -11,7 +11,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.project.ui.view.FormMahasiswaViewModel
+import com.example.project.model.ListGender
+import com.example.project.ui.view.DetailMahasiswaView
+import com.example.project.ui.view.FormMahasiswaView
 import com.example.project.ui.viewmodel.MahasiswaViewModel
 
 enum class Halaman {
@@ -34,20 +36,20 @@ fun Navigasi(
         ){
             composable(route = Halaman.Form.name) {
                 val konteks = LocalContext.current
-                FormulirView(
-                    li = DataJK.isiJk.map {
+                FormMahasiswaView(
+                    listGender = ListGender.listGender.map {
                         isi -> konteks.resources.getString(isi)
                     },
-                    onClickButton ={
-                        viewModel.saveDataMahasiswa(it)
+                    onSubmitClick ={
+                        viewModel.saveDataMhs(it)
                         navHost.navigate(Halaman.Data.name)
                     }
                 )
             }
             composable(route = Halaman.Data.name) {
-                TampilMahasiswaView(
-                    mhs = uiState,
-                    onClickButton ={
+                DetailMahasiswaView(
+                    dataMhs = uiState,
+                    onBackButtonClicked = {
                         navHost.popBackStack()
                     }
                 )

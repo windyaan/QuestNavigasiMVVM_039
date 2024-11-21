@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun FormMahasiswaViewModel(
+fun FormMahasiswaView(
     modifier : Modifier = Modifier,
     listGender: List<String>,
     onSubmitClick: (MutableList<String>) -> Unit
