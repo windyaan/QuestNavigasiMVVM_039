@@ -36,6 +36,10 @@ fun Navigasi(
                     pilihanJk = DataJK.isiJk.map {
                         isi -> konteks.resources.getString(isi)
                     },
+                    onClickButton ={
+                        viewModel.saveDataMahasiswa(it)
+                        navHost.navigate(Halaman.Data.name)
+                    }
                 )
             }
         }
